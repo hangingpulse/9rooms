@@ -1,0 +1,9 @@
+.character {
+    width: 100px;
+    height: 120px;
+    border: 1px solid black;
+}
+
+.character__name {
+    font-size: 1rem;
+}
