@@ -5,13 +5,13 @@ import Character from './Character'
 import './Room.css'
 
 
-function Room({name, id, characters, changeRoom}) {
+function Room({room, characters, changeRoom}) {
 
     const [{isOver}, drop] = useDrop({
         accept: ItemTypes.CHARACTER,
-        drop: (character, monitor) => {
+        drop: (character) => {
             console.log(character)
-            changeRoom(character.name, id)},
+            changeRoom(character.name, room)},
         collect: monitor => ({
             isOver: !!monitor.isOver(),
         })
@@ -20,12 +20,11 @@ function Room({name, id, characters, changeRoom}) {
 
     return (
         <div className="room" ref={drop}>
-            <h1 className="room__title">{name}</h1>
+            <h1 className="room__title">{room.name}</h1>
             <div className="room__area"
                 style={isOver? {backgroundColor: 'yellow'}: {}}
             >
                 {characters
-                    .filter((character) => character.room === id)
                     .map((character, i) => (<Character 
                     key={i} 
                     character={character} 
