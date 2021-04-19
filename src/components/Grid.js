@@ -1,28 +1,29 @@
 import React from 'react'
 import Room from './Room'
 import './Grid.css'
+import useGame from '../hooks/useGame'
+import rooms from '../gamedata/rooms'
 
 function Grid() {
-    return (
-        <div className="grid">
-            <div className="row row--1">
-                <Room number='1' />
-                <Room number='2'/>
-                <Room number='3'/>
-            </div>
-            <div className="row row--2">
-                <Room number='4'/>
-                <Room number='5'/>
-                <Room number='6'/>
-            </div>
-            <div className="row row--3">
-                <Room number='7'/>
-                <Room number='8'/>
-                <Room number='9'/>
-            </div>
 
+    const [gameState, changeRoom] = useGame()
+    console.log(gameState)
+
+    return (
+        <div className="Grid">
+           
+            <div className="row row--1">
+                {rooms.map(((room) =>  <Room 
+                key={room.id} 
+                room={room} 
+                changeRoom={changeRoom}
+                characters={gameState.rooms[room.id]}
+                /> ))}
+            </div>
+            
         </div>
     )
+    
 }
 
 export default Grid
