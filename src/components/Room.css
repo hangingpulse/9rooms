@@ -15,4 +15,9 @@
     align-items: center;
 }
 
+.room__slot1, .room_slot2 {
+    width: 6rem;
+    height: 8rem;
+    border: 2px dotted black;
+}
 

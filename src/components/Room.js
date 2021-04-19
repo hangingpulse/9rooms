@@ -9,9 +9,10 @@ function Room({room, characters, changeRoom}) {
 
     const [{isOver}, drop] = useDrop({
         accept: ItemTypes.CHARACTER,
-        drop: (character) => {
+        drop: ({character}) => {
             console.log(character)
-            changeRoom(character.name, room)},
+            changeRoom(room.id, character)
+        },
         collect: monitor => ({
             isOver: !!monitor.isOver(),
         })
@@ -21,16 +22,15 @@ function Room({room, characters, changeRoom}) {
     return (
         <div className="room" ref={drop}>
             <h1 className="room__title">{room.name}</h1>
-            <div className="room__area"
-                style={isOver? {backgroundColor: 'yellow'}: {}}
-            >
-                {characters
-                    .map((character, i) => (<Character 
-                    key={i} 
-                    character={character} 
-                    changeRoom={changeRoom}
-                    />))
-                }
+                <div className="room__area"
+                    style={isOver? {backgroundColor: 'yellow'}: {}}
+                >
+                <div className="room__slot1">
+                    {characters.slot1 && <Character characterId={characters.slot1} changeRoom={changeRoom} />}
+                </div>
+                <div className="room_slot2">
+                    {characters.slot2 && <Character characterId={characters.slot2} changeRoom={changeRoom} />}
+                </div>
             </div>
         </div>
     )
