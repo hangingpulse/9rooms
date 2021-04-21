@@ -1,39 +1,17 @@
-import React from 'react'
-import { useDrop } from 'react-dnd'
-import { ItemTypes } from '../utils/ItemTypes'
-import Character from './Character'
-import './Room.css'
+import React from "react";
+import "./Room.css";
+import RoomSlot from "./RoomSlot";
 
-
-function Room({room, characters, changeRoom}) {
-
-    const [{isOver}, drop] = useDrop({
-        accept: ItemTypes.CHARACTER,
-        drop: ({character}) => {
-            console.log(character)
-            changeRoom(room.id, character)
-        },
-        collect: monitor => ({
-            isOver: !!monitor.isOver(),
-        })
-    })
-
-
+function Room({ room }) {
     return (
-        <div className="room" ref={drop}>
+        <div className="room">
             <h1 className="room__title">{room.name}</h1>
-                <div className="room__area"
-                    style={isOver? {backgroundColor: 'yellow'}: {}}
-                >
-                <div className="room__slot1">
-                    {characters.slot1 && <Character characterId={characters.slot1} changeRoom={changeRoom} />}
-                </div>
-                <div className="room_slot2">
-                    {characters.slot2 && <Character characterId={characters.slot2} changeRoom={changeRoom} />}
-                </div>
+            <div className="room__area">
+                <RoomSlot currentSlot={room.slots[0]} />
+                <RoomSlot currentSlot={room.slots[1]} />
             </div>
         </div>
-    )
+    );
 }
 
-export default Room
+export default Room;
