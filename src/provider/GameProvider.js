@@ -29,7 +29,7 @@ const initialState = {
             ],
         },
         {
-            id: "sleeping-room",
+            id: "bedroom",
             slots: [
                 {
                     id: "sleeping-room-1",
@@ -90,10 +90,7 @@ function GameProvider({ children }) {
                     character: droppedCharacter,
                 };
                 // Delete the character from his former slot
-            } else if (
-                slot.character === droppedCharacter &&
-                slot.character !== droppedCharacter
-            ) {
+            } else if (slot.character === droppedCharacter) {
                 return {
                     ...slot,
                     character: "",

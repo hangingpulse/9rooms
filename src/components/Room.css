@@ -1,12 +1,19 @@
 .room {
-    width: 300px;
-    height: 200px;
-    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+    width: 40rem;
+    height: 25rem;
+    border: 1px solid black;
+    border-radius: 10px;
     margin: 2rem;
+    background-size: cover;
+    text-align: center;
 }
 
 .room__title {
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 .room__area {
@@ -15,9 +22,34 @@
     align-items: center;
 }
 
+.Room__btn--talk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4a261;
+    border: 2px solid black;
+    border-radius: 50%;
+    box-shadow: 2px 2px 3px #3b2818;
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.Room__btn--talk:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 5px #3b2818;
+    cursor: pointer;
+}
+
 .RoomSlot {
-    width: 6rem;
-    height: 8rem;
-    border: 2px dotted black;
+    width: 12rem;
+    height: 19rem;
+    margin: 0 3rem;
+    border: 1px dotted black;
+    background-color: rgba(0, 0, 0, 0.397);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 

@@ -2,6 +2,7 @@ const rooms = [
     {
         id: "kitchen",
         name: "kitchen",
+        image: "../pics/rooms/kitchen.jpeg",
         slots: [
             {
                 id: "kitchen-1",
@@ -14,6 +15,7 @@ const rooms = [
     {
         id: "bathroom",
         name: "bathroom",
+        image: "../pics/rooms/bathroom.jpeg",
         slots: [
             {
                 id: "bathroom-1",
@@ -24,8 +26,9 @@ const rooms = [
         ],
     },
     {
-        id: "sleeping-room",
-        name: "sleeping room",
+        id: "bedroom",
+        name: "bedroom",
+        image: "../pics/rooms/bedroom.jpeg",
         slots: [
             {
                 id: "sleeping-room-1",
@@ -38,6 +41,7 @@ const rooms = [
     {
         id: "living-room",
         name: "living room",
+        image: "../pics/rooms/living-room.jpeg",
         slots: [
             {
                 id: "living-room-1",

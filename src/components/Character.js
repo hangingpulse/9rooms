@@ -19,16 +19,20 @@ function Character({ characterName }) {
         }),
     }));
 
-    const characterStyle = {
-        backgroundColor: currentCharacter.color,
-    };
-
     return (
         <div
             className={isDragging ? "character character--drag" : "character"}
             ref={drag}
-            style={characterStyle}
         >
+            <img
+                className="Character__image"
+                src={
+                    isDragging
+                        ? currentCharacter.imageDrag
+                        : currentCharacter.image
+                }
+                alt={currentCharacter.name}
+            />
             <h2 className="character__name">{currentCharacter.name}</h2>
         </div>
     );
