@@ -1,8 +1,8 @@
 import React from "react";
 import { useDrag } from "react-dnd";
 import "./Character.css";
-import { ItemTypes } from "../utils/ItemTypes";
-import characters from "../gamedata/characters";
+import { ItemTypes } from "../../utils/ItemTypes";
+import characters from "../../gamedata/characters";
 
 function Character({ characterName }) {
     const currentCharacter = characters.find(
@@ -21,7 +21,7 @@ function Character({ characterName }) {
 
     return (
         <div
-            className={isDragging ? "character character--drag" : "character"}
+            className={isDragging ? "Character Character--drag" : "Character"}
             ref={drag}
         >
             <img
@@ -33,7 +33,7 @@ function Character({ characterName }) {
                 }
                 alt={currentCharacter.name}
             />
-            <h2 className="character__name">{currentCharacter.name}</h2>
+            <h2 className="Character__name">{currentCharacter.name}</h2>
         </div>
     );
 }

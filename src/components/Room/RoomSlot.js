@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import Character from "./Character";
+import Character from "../Character/Character";
 import { useDrop } from "react-dnd";
-import { gameStore } from "../provider/GameProvider";
-import { ItemTypes } from "../utils/ItemTypes";
+import { gameStore } from "../../provider/GameProvider";
+import { ItemTypes } from "../../utils/ItemTypes";
 
 function RoomSlot({ currentSlot }) {
     const { gameState, changeRoom } = useContext(gameStore);
