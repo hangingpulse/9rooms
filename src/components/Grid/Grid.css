@@ -1,6 +1,7 @@
-.grid {
+.Grid {
     display: flex;
     flex-direction: column;
+    width: 100rem;
 }
 
 .row {

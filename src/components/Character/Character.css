@@ -1,4 +1,4 @@
-.character {
+.Character {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,11 +7,14 @@
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 2px 2px 3px black;
-    background-color: #d8e2dc;
+    background-color: #acd0f7;
+    background-image: linear-gradient(315deg, #acd0f7 0%, #e5d9f7 100%);
+
+    
     box-sizing: border-box;
 }
 
-.character:hover {
+.Character:hover {
     transform: translate(-3px, -3px);
     box-shadow: 4px 4px 10px black;
     overflow: visible;
@@ -20,12 +23,12 @@
 
 
 
-.character--drag {
+.Character--drag {
     opacity: 0.5;
     cursor: dragging;
 }
 
-.character__name {
+.Character__name {
     font-size: 2rem;
 }
 
